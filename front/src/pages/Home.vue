@@ -72,7 +72,7 @@ export default {
     return {
       username: '',
       messages: [],
-      router: useRouter()
+      router:useRouter()
 
       
     };
