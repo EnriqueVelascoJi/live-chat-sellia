@@ -1,0 +1,30 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@graphql-tools/schema": "^10.0.16",
+    "apollo-server": "^3.13.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "graphql": "^16.10.0",
+    "graphql-scalars": "^1.24.1",
+    "graphql-subscriptions": "^3.0.0",
+    "graphql-ws": "^6.0.0",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.0.5",
+    "ws": "^8.18.0"
+  }
+}
