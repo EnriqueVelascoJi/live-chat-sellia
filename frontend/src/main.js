@@ -1,4 +1,3 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
 import { createApp } from 'vue';
 
 import App from './App.vue';

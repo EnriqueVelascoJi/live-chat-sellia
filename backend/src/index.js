@@ -73,10 +73,9 @@ const server = new ApolloServer({
   ],
 });
 
+//Connection
 await server.start()
-
 app.use("/subscriptions", cors(), bodyParser.json(), expressMiddleware(server))
-
 httpServer.listen(4000, () => {
     console.log("Server running on port: ", 4000)
 })

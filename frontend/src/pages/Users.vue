@@ -64,9 +64,9 @@
 <script>
 
 import gql from "graphql-tag"
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import NavBar from "../components/Global/NavBar.vue"
-import { USER_MUTATION, USER_QUERY, USER_SUBSCRIPTION } from "../graphql/graphql"
+import { USER_QUERY, USER_SUBSCRIPTION } from "../graphql/graphql"
 
 
 

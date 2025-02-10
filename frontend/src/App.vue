@@ -5,7 +5,6 @@
 </template>
 
 <script>
-  import { RouterLink, RouterView } from 'vue-router'
 
 import gql from "graphql-tag"
 import NavBar from "./components/Global/NavBar.vue"

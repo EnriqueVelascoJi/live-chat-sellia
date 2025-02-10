@@ -1,5 +1,4 @@
 import { TimestampResolver, UUIDResolver } from "graphql-scalars"
-import { v4 } from "uuid";
 import { PubSub } from "graphql-subscriptions"
 
 
