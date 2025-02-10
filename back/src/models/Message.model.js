@@ -8,18 +8,26 @@ const Message = mongoose.model("Message", {
         default: () => v4(),
         required: true
     },
+
     content: {
         type: String,
         required: true
     },
-    from: {
+
+    type: {
+        type: String,
+        required: true
+    },
+
+    sender: {
         type: mongoose.Schema.Types.UUID,
         ref: 'User',
         required: true
     },
-    to: {
-        type: mongoose.Schema.Types.UUID,
-        ref: 'User',
+
+    timestamp: {
+        type: mongoose.Schema.Types.Date,
+        default: () => new Date,
         required: true
     }
 })

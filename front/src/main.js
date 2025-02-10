@@ -5,6 +5,7 @@ import "bootstrap";
 import App from './App.vue';
 import apolloProvider  from './apollo';
 import router from './router';
+import "./style.css"
 
 
 

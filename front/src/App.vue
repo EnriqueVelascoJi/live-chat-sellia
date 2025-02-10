@@ -1,8 +1,5 @@
     
-<template>
-  <NavBar />
- 
-
+<template> 
 <RouterView />
 
 </template>
@@ -11,7 +8,7 @@
   import { RouterLink, RouterView } from 'vue-router'
 
 import gql from "graphql-tag"
-import NavBar from "./components/Landing/NavBar.vue"
+import NavBar from "./components/Global/NavBar.vue"
 
 export default {
   name: 'app',

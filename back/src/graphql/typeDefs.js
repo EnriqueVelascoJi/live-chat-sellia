@@ -9,37 +9,28 @@ const typeDefs = [gql`
     
   }
   type Message {
-    id: ID,
+    id: UUID,
     content: String!
-    from: String!
-    to: String!
-    timestamp: Timestamp
+    type: String!
+    sender: UUID,
+    timestamp: Timestamp!
   }
 
   type Query {
-    getAllMessages: [Message]!
-    usersCount: Int
-    getAllUsers: [User]!
-    getUserById(id: String!): User
+    messages: [Message]!
+    users: [User]!
   }
 
   type Mutation {
     createUser(username: String!): User
-
-    createMessage(content: String!, from: String!, to: String!): Message
-
-    updateUser(
-      id: String
-      name: String
-      phone: String
-      age: Int
-      city: String
-    ): User
-    deleteUser(id: String): User
+    createMessage(content: String!, sender: UUID!, type: String!): Message
+    
   } 
-    type Subscription {
-newMessage: Message
-}
+
+  type Subscription {
+    newMessage: Message,
+    newUser: User
+  }
 
 `, TimestampTypeDefinition, UUIDDefinition];
 

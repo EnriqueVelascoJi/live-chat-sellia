@@ -57,12 +57,15 @@
   </div>
 </div>
 
+
+
 </template>
 
 <script>
 
 import gql from "graphql-tag"
 import { useRoute, useRouter } from "vue-router";
+import { USER_MUTATION } from "../graphql/graphql"
 
 
 export default {
@@ -71,7 +74,6 @@ export default {
   data() {
     return {
       username: '',
-      messages: [],
       router:useRouter()
 
       
@@ -79,25 +81,15 @@ export default {
   },
   methods: {
     signup() {
-      console.log(this.username)
       this.$apollo.mutate({
-      // Query
-      mutation: gql`mutation ($username: String!) {
-        createUser(username: $username) {
-          username
-        }
-      }`,
+      mutation: USER_MUTATION,
       variables: {
         username: this.username,
       },
     }).then((data) => {
-      // Result
-      console.log(data)
-      this.router.push("/chat")
+      this.router.push(`/main-chat/${data.data.createUser.id}`)
     }).catch((error) => {
-      // Error
       console.error(error)
-      // We restore the initial user input
     })
     },
   },

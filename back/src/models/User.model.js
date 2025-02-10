@@ -8,6 +8,7 @@ const User = mongoose.model("User", {
         default: () => v4(),
         required: true
     },
+    
     username: {
         type: String,
         required: true
