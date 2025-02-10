@@ -69,8 +69,6 @@
                     alt="avatar 3" style="width: 40px; height: 100%;">
                   <input @keyup.enter="sendMessage" v-model="message" type="text" class="form-control form-control-lg" id="exampleFormControlInput2"
                     placeholder="Type message">
-                  <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
-                  <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a>
                   <a @click="sendMessage" class="ms-3" ><i class="fas fa-paper-plane"></i></a>
                 </div>
                 
