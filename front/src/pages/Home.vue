@@ -45,13 +45,13 @@
         <form>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Username:</label>
-            <input type="text" class="form-control" id="recipient-name" v-model="username">
+            <input @keyup.enter="signup" type="text" class="form-control" id="recipient-name" v-model="username">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button @click="signup" type="button" class="btn btn-primary">Signup</button>
+        <button @click="signup" type="button" class="btn btn-primary" data-bs-dismiss="modal">Signup</button>
       </div>
     </div>
   </div>
@@ -63,8 +63,7 @@
 
 <script>
 
-import gql from "graphql-tag"
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import { USER_MUTATION } from "../graphql/graphql"
 
 
@@ -75,8 +74,6 @@ export default {
     return {
       username: '',
       router:useRouter()
-
-      
     };
   },
   methods: {
@@ -87,7 +84,9 @@ export default {
         username: this.username,
       },
     }).then((data) => {
-      this.router.push(`/main-chat/${data.data.createUser.id}`)
+      this.router.push("/main-chat")
+      this.$store.commit('setUserId', data.data.createUser.id)
+
     }).catch((error) => {
       console.error(error)
     })

@@ -1,22 +1,23 @@
     
 <template>
+  {{ $route.fullPath }}
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <RouterLink to="/main-caht">
-      <a class="nav-link active" aria-current="page" href="#">Main chat room</a>
+    <RouterLink to="/main-chat">
+      <a v-bind:class="{active: $route.fullPath=='/main-chat'}" class="nav-link" aria-current="page" href="#">Main chat room</a>
     </RouterLink>
   </li>
   <li class="nav-item">
-    <RouterLink to="/main-caht">
-      <a class="nav-link" href="#">Your chat</a>
+    <RouterLink to="/main-chat">
+      <a class="nav-link disabled" href="#">Your chat</a>
     </RouterLink>
   </li>
   <li class="nav-item disabled">
-    <a class="nav-link" href="#">Your groups</a>
+    <a class="nav-link disabled" href="#">Your groups</a>
   </li>
   <li class="nav-item">
     <RouterLink to="/users">
-      <a class="nav-link" href="#">Users</a>
+      <a v-bind:class="{active: $route.fullPath=='/users'}" class="nav-link" href="#">Users</a>
     </RouterLink>
   </li>
   
@@ -31,14 +32,9 @@
 
 export default {
   name: 'navbar',
-  
-  
+
   data() {
     return {
-      username: '',
-      message: '',
-      user: this.$route.params.id,
-
       
     };
   },

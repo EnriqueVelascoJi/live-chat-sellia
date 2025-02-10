@@ -3,6 +3,7 @@
   <NavBar />
   <section >
   <div class="container py-5">
+    {{ this.$store.getters.getUserId }}
 
     <div class="row">
       <div class="col-md-12">
@@ -24,8 +25,7 @@
                    
 
                       <div v-if="sender === message.sender" class="d-flex flex-row justify-content-end">
-                        <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
-                          alt="avatar 1" style="width: 45px; height: 100%;">
+                       
                         <div>
                           <p class="small p-2 ms-3 mb-1 rounded-3 text-white  bg-primary">{{ message.content }}</p>
                           <p class="small ms-3 mb-3 rounded-3 text-muted">
@@ -35,9 +35,13 @@
                           }) }}
                           </p>
                         </div>
+                         <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
+                          alt="avatar 1" style="width: 45px; height: 100%; margin-left: 10px;">
                       </div>
 
                       <div v-else class="d-flex flex-row justify-content-start">
+                        <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
+                          alt="avatar 1" style="width: 45px; height: 100%; margin-right: 10px;">
                         <div>
                           <p class="small p-2 me-3 mb-1 rounded-3 bg-body-tertiary">{{ message.content }}</p>
                           <p class="small me-3 mb-3 rounded-3 text-muted float-end">
@@ -47,8 +51,7 @@
                           }) }}
                           </p>
                         </div>
-                        <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png"
-                          alt="avatar 1" style="width: 45px; height: 100%;">
+                        
                       </div>
 
                   </div>
@@ -99,7 +102,7 @@ export default {
     return {
       username: '',
       message: '',
-      sender: this.$route.params.id,
+      sender: this.$store.getters.getUserId,
       router:useRouter()
 
       

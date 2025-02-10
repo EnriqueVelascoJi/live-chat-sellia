@@ -154,9 +154,9 @@
                   style="position: relative; height: 400px; overflow: scroll;">
 
                   <div
-      v-for="(message, id) in messages"
-      :key="id"
-    >
+                    v-for="(message, id) in messages"
+                    :key="id"
+                  >
              
 
                   <div v-if="message.from == 'd5e71663-a329-46cf-8c47-3ff2991019db'" class="d-flex flex-row justify-content-start">
