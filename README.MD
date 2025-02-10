@@ -1,4 +1,4 @@
-# BTake-Home Coding Challenge - Sellia
+# Take-Home Coding Challenge - Sellia
 
 _Enrique Velasco Jimenez: The chat room -> NodeJs(GraphQL) + Vue(Vuex) + MongoDB + Docker_
 
